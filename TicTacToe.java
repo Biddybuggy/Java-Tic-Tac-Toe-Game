@@ -11,8 +11,7 @@ public class TicTacToe {
         int turnCounter = 0;
 
         while (isGoingOn) {
-            System.out.println("\nNOTE: Writing down an invalid position will result in the game ending.");
-
+            System.out.println("\n");
             for (int i = 0; i < board.length; i++) {
                 String currentLine = "";
                 for (int j = 0; j < board[0].length; j++) {
@@ -43,15 +42,15 @@ public class TicTacToe {
             System.out.println("\nPlayer " + player_number + ", enter your intended row (1-3): ");
             int rowNum = programScanner.nextInt();
 
-            System.out.println("Player " + player_number + ", enter your intended column (1-3): ");
+            System.out.println("\nPlayer " + player_number + ", enter your intended column (1-3): ");
             int columnNum = programScanner.nextInt();
 
             if (rowNum < 1 || rowNum > 3 || columnNum < 1 || columnNum > 3) {
-                System.out.println("Invalid row number or column number.");
-                return;
+                System.out.println("\nInvalid row number or column number.");
+                continue;
             } else if (board[rowNum - 1][columnNum - 1] != ".") {
-                System.out.println("That spot is taken.");
-                return;
+                System.out.println("\nThat spot is taken.");
+                continue;
             } else {
                 if (turnCounter % 2 == 0) {
                     board[rowNum-1][columnNum-1] = "O";
